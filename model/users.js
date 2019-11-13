@@ -8,4 +8,4 @@ const userSchema= new moongoose.Schema({
     }
 });
 
-module.exports=moongoose.model('users',userSchema)
+moongoose.model('users',userSchema)

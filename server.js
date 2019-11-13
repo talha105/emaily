@@ -1,10 +1,13 @@
 const express=require('express');
 const app=express();
 require('./mongoose')
+require('./model/users')
+require('./model/survey')
 const bodyParser=require('body-parser');
 const cookieSession=require('cookie-session');
 const keys=require('./config/keys')
 const passport=require('passport');
+
 require('./services/passport');
 
 app.use(bodyParser.json())
@@ -16,7 +19,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(require('./routes/authRoutes'));
 app.use(require('./routes/paymentRoutes'))
-
+app.use(require('./routes/surveyRoutes'))
 if(process.env.NODE_ENV==="production"){
     app.use(express.static('client/build'));
     const path=require('path');

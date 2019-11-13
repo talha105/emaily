@@ -29,8 +29,8 @@ class Header extends Component {
         return (
             <div>
                 <nav>
-                    <div className="nav-wrapper">
-                    <Link to={authReducer? '/survey': '/'} className="brand-logo left">Logo</Link>
+                    <div className="nav-wrapper indigo">
+                    <Link to={authReducer? '/survey': '/'} className="brand-logo left" style={{marginLeft:30}}>Logo</Link>
                     <ul id="nav-mobile" className="right">
                         {this.renderContent()}
                     </ul>
